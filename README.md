@@ -1,33 +1,35 @@
 # kamehandle.py ⚡️
 Generate likely username + email handle permutations from full names.
 
-**Why?**
-Because “john.doe”, “jdoe”, “doe.john”, etc. keep showing up everywhere — and it’s handy for:
-- IT/service desk onboarding checks
-- Directory cleanup & account matching
-- Defensive OSINT (blue team / SOC) when you already have legitimate scope
+Built for practical, legitimate use cases like:
+- onboarding/account provisioning checks
+- directory cleanup & account matching
+- defensive OSINT **with authorization and scope**
 
-> Ethical use: This tool is for legitimate, authorized purposes. Don’t use it for phishing, harassment, or unauthorized targeting.
+> Ethical use: Do not use this tool for phishing, harassment, or unauthorized targeting.
 
 ---
 
 ## Features
-- Input: a single `"Firstname Lastname"` or a file of names
+- Input: a single `"Firstname Lastname"` or a file with one name per line
 - Output: usernames, emails, or both
 - Export: `.txt` or `.csv`
 - Supports multiple email domains (repeat `--domain`)
+- Better normalization for real names (apostrophes, hyphens, accents) via `--ascii`
+- Optional max length enforcement (`--max-length`)
+- Optional numeric suffixes (`--add-numbers 1-50`)
+- Presets for “common vs wide” generation (`--profile common|wide|minimal`)
+- No external dependencies
 
 ---
 
 ## Requirements
-- Python 3.9+ (works on Linux/macOS/Windows)
-
-No external dependencies.
+- Python 3.9+
 
 ---
 
-## Usage
+## Quick Start
 
-### 1) Single name → usernames
+### 1) Usernames for one person
 ```bash
 python3 kamehandle.py --name "John Doe" --mode usernames
