@@ -1,6 +1,3 @@
-
----
-
 ## `kamehandle.py`
 
 ```python
