@@ -1,6 +1,6 @@
 ## `kamehandle.py`
 
-```python
+#```python
 #!/usr/bin/env python3
 """
 kamehandle.py
